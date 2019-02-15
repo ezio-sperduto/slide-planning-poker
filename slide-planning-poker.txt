@@ -1,0 +1,122 @@
+[verbale]
+- a che serve il sizing/dimensionamento, ovvero la stima della dimensione
+r: a valutare meglio la quantità di lavoro da svolgere in uno sprint
+a differenziare le user-story, non hanno tutte peso diverso, è un errore considerarle
+tali
+
+- varie tecniche di dimensionamento, una:
+-- planning poker, anche nota come Agile Poker, Scrum Poker
+
+logica: stima condivisa tra tutto il team
+
+si basa su una misura delle user-story, basta su una metrica. 
+Di solito la metrica è in punteggi numerici chiamati story-point.
+
+come funziona
+
+1. il PO espone un requisito (sempre e solo lui), titolo e descrizione
+2. discussione tra team e PO (dettagli, curiosità, etc)
+3. votazione sempre contemporanea del team 
+  (le figure PO e SM non votano e non influenzano minimamente la votazione)
+4. se voti molto discordanti, i più alti e i più bassi espongono le loro perplessità
+e si continua col punto 2, fino a raggiungere un consenso (voti uguali)
+
+* in caso di voti discordanti di poco, è possibile effettuare una media, o fissare
+il peso della storia al punteggio maggiormente votato (ma solo se c'è una varianza
+bassa altrimenti discussione)
+
+* normalmente si può tenere in considerazione di più la votazione delle persone del team
+che saranno gli effettivi sviluppatori della funzionalità
+
+* lo SM è il moderatore della giostra, fa come un conduttore televisivo, che conosce
+le regole del gioco, spiega ai giocatori ognuno cosa deve fare, li riporta all'ordine
+affinché rispettino la procedura. Essendo aderente alla procedura e imparziale, riesce
+a ottenere un corretto dimensionamento finale delle storie
+- deve evitare il protrarsi troppo a lungo delle discussioni, magari spezzando delle storie pesanti
+magari rimandando la votazione a dopo, usando una tecnica
+
+
+i tipi di carte sono vari:
+- quelle usate
+- varianti con meno o più size
+- il T-Shirt sizing XS-S-M-L-XL-XXL
+
+
+* una cosa importante da non sottovalutare, è la capacità di fare valutazioni assolute
+piuttosto che relative: è ovvio che é più difficile, e probabilmente impossibile, 
+infatti queste tecniche nascono dalla difficoltà della stima assoluta, ma è sempre
+importante tenere traccia di un riferimento assoluto. Di cosa sto parlando? 
+Che significa tutto ciò? Sto facendo riferimento a: quanto effort vale uno story-point?
+
+* è fondamentale valutare le storie come effort e non come complessità:
+rif. articolo di Mike Cohn.
+esempio: team con un bambino e un chirurgo, backlog con task: appiccicare 1000 francobolli e operazione al cuore
+probabilmente assegnando il task alla persona giusta, queste avranno gli stessi sp.
+
+* formula story-point: SP = f(Complessità, Rischio, Incertezza)
+
+
+[manuale](SHOWDOWN)
+occorrente: 2 fogli a4 per partecipante e 2/3 pennarelli spessi
+ognuno prende 2 fogli a4 e divide x2 x2 x2 (in 8) = 16 fogliettini a testa
+bastano 14, le rimanenti si buttano
+su ogni carta si disegna il logo di una carta come
+immagine: carte.png
+le carte riportano diverse sizing, approssimano la sequenza di Fibonacci:
+- 0 non costa nulla (effettivamente)
+- 0.5 pochissimo
+- 40 e 100 storie molto pesanti
+- infinito storia troppo grande per essere sviluppata e inserita nel backlog
+deve essere divisa
+- ? troppi pochi dettagli per stimare, possiamo parlare nello specifico (altre domande)
+- caffè: facciamo una pausa?
+
+{caso 1: esempio dove tutti votano e io espongo requisiti a guido}
+esempio con website di ecommerce:
+- pagina contatti? (semplice)
+	- pagina statica con descrizione contatti, immagini, pochi contenuti
+- funzionalità login 
+	- modulo di inserimento: user e pw
+	- richiesta cifrata di autenticazione
+	- verifica su db/tabella sicura delle credenziali
+	- in caso ok: registrare su sessione utente livello autenticazione
+	- in caso ko: rispondere all'utente con maschera "user o pw errate"
+	- su ogni pagina, nell'intestazione, riferirsi alla sessione, per identificare se autenticati
+	altrimenti messaggio "forbidden"
+
+{caso 2: esercizio io faccio il PO, la persona più esperta fa da SM, gli altri votano}
+modulo gestione informazioni della mensa su archibus:
+due ruoli: cuoco, cliente
+- come cuoco vorrei pagina con pannello a sinistra che mostri i menu
+a destra che abbia una form per il singolo menu
+- come cuoco vorrei premere un tasto aggiungi nuovo, che mi permette da aprire il form
+come nuovo record e mi permette di inserire i dati: Primo1, primo2, primo3, etcc.
+tutto stringa, e salvare
+- come cuoco vorrei un bottone modifica sul singolo menu per correggere l'inserimento
+- come cliente vorrei una pagina che mi permette, in sola lettura, di vedere il menù di oggi
+- come cliente vorrei ricevere un'email con il menu del giorno appena viene pubblicato
+- come cliente vorrei un chatbot che legge sul db archibus il menu e me lo scrive sul cellulare
+
+
+
+[video]
+https://www.youtube.com/watch?v=8RX4rtnRogE
+Il peggiore coach agile (si focalizza sulle worst practices, non best. Dagli errori si impara)
+- La tizia è il PO (Product Owner)
+- 1. elimina qualunque dissenso
+- 2. il PO fa tutto da solo
+- 3. dopo il planning il PO saluta tutti e aspetta il risultato
+- ci sono tanti altri errori da evitare non solo questi
+- il video è realizzato da Atlassian (bitbucket)
+
+
+piaciuto l'argomento?
+se si condividete con gli altri, se voglio lo racconto di nuovo
+rompete le scatole a caruso per dedicare ore di commessa a seminari simili
+
+
+[rif.]
+https://www.agileway.it/planning-poker-stima-agile-requisiti/
+wikipedia,
+[articolo mike cohn, effort non complessità, co-fondatore di SCRUM]
+https://www.mountaingoatsoftware.com/blog/its-effort-not-complexity
